@@ -1,6 +1,6 @@
 import { GetServerSideProps } from 'next';
 import Image from 'next/image';
-import Ling from 'next/link';
+import Head from 'next/head';
 import { api } from '../services/api';
 import { format, parseISO } from 'date-fns'
 import { ptBR } from 'date-fns/locale';
@@ -34,6 +34,11 @@ export const Home = ({ latestEpisodes, allEpisodes } : HomeProps) => {
 
   return (
     <div className={styles.homePage}>
+
+    <Head>
+      <title>Home | Podcastr</title>
+    </Head>
+
       <section className={styles.latestEpisodes}>
         <h2>Últimos Lançamentos</h2>
 
